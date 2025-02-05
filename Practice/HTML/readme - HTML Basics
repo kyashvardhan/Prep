@@ -1,0 +1,12 @@
+HTML Basics - Personal Info Page
+This project demonstrates the fundamental use of HTML elements by creating a personal information webpage. The page features the use of the following HTML tags:
+
+<p>: For defining paragraphs of text
+<address>: To display contact information
+<ul>: For creating an unordered list of hobbies
+
+What This Code Does:
+Paragraph (<p>): Contains a brief introduction about myself.
+Address (<address>): Displays a placeholder phone number.
+Unordered List (<ul>): Lists my hobbies and interests.
+Image (<img>): Includes a profile picture with an alt tag for better accessibility.
