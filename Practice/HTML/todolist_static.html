@@ -1,0 +1,80 @@
+<!--This is an pure HTML code-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>To Do List For Your</legend>
+        <label for="taskname">Task Name : </label>
+        <input type="Text" id="taskname" name="taskname" placeholder="read ikigai">
+        <button type="button">Submit</button>
+
+        <fieldset>
+            <legend>Pending Task</legend>
+                <ol>
+                    <!--here we added label for checkbox so that we can hover and click-->
+                    <li><input type="checkbox" id="readb" name="todo">
+                    <label for="readb">Read Book</label>
+
+                    <details>
+                        <summary>List of Books</summary>
+                            <ul>
+                                <li>Shivaji - The Great Maratha</li>
+                                <li>The Great Gatsby</li>
+                                <li>To Kill a Mockingbird</li>
+                                <li>One Hundred Years of Solitude</li>
+                                <li>Cosmos</li>
+                            </ul>
+                    </details>
+                    </li>
+                    <li><input type="checkbox" id="play" name="todo">
+                    <label for="play">Play Ps5</label>
+                        
+                    <details>
+                        <summary>List of Games</summary>
+                            <ul>
+                                <li>GTA VI</li>
+                                <li>WWE 2K25</li>
+                                <li>RDR 2</li>
+                                <li>GOD OF WAR 2025</li>
+                                <li>MUMBAI GULLY</li>
+                            </ul>
+                    </details>
+                    </li>
+                    <button type="reset">Clear All</button>
+                </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend>Completed Task</legend>
+                <ol>
+                    <!--here we didn't add label for checkbox so that we cannot hover and click-->
+                    <li><input type="checkbox">Eat Pav Bhaji</li>
+                    <li><input type="checkbox">Watch WWE</li>
+
+                    <li><input type="checkbox" name="todo">
+                    <label for="todo">Mark All Done</label>
+                    </li>
+                    <button type="reset">Clear All</button>
+                </ol>
+        </fieldset>
+    </fieldset>
+
+    <!--this is extra data field, we can select from it as well
+    since this is html pure code, we can't add them to our list.-->
+
+    <input type="text" id="taskname" name="taskname" placeholder="Enter task" list="task-suggestions">
+            <datalist id="task-suggestions">
+            <option value="Read Book"></option>
+            <option value="Exercise"></option>
+            <option value="Buy Groceries"></option>
+            <option value="Meditate"></option>
+            </datalist>
+    </form>
+</html>
