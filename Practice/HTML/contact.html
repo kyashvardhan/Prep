@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Objective:
+Create a form to collect:
+Name (text input).
+Email (email input).
+Message (textarea).
+A Submit button.-->
+
+    <form action="submit" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" required>
+
+        <label for="num">Age</label>
+        <input type="number" id="num" name="num" min="1" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="tel">Telephone</label>
+        <input type="tel" id="tel" name="tel" required>
+
+        <input type="color" name="favcolor">
+        <input type="range" name="volume" min="0">
+
+        <label for="msg">Message</label>
+        <textarea id="msg" name="msg" required></textarea>
+
+        <button type="submit">Submit</button>
+
+        
+
+    </form>
+</body>
+</html>
