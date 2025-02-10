@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem vs px</title>
+    <style>
+        /* Default root font size */
+        html {
+            font-size: 20px; /* New base size */
+        }
+        /* Using rem */
+        #rem-text {
+            font-size: 2rem; /* 2 × 16px = 32px */
+            color: blue;
+        }
+
+        /* Using px */
+        #px-text {
+            font-size: 32px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="rem-text">This is 2rem text</p>
+    <p id="px-text">This is 32px text</p>
+</body>
+</html>
