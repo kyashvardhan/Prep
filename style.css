@@ -1,0 +1,39 @@
+body{
+    background-color: chartreuse;
+}
+h1{
+    color:brown;
+}
+
+p{
+    color: whitesmoke;
+}
+p:hover{
+    color:blue
+}
+
+button:hover{
+    color: yellow;
+    background-color: black;
+}
+
+.container {
+    display: flex; /* Turns this into a Flexbox container */
+    background: lightgray;
+    padding: 20px;
+  }
+  
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+  }
+  
+  .box {
+    flex-grow: 1; /* All items grow to take equal space */
+  }
+  
