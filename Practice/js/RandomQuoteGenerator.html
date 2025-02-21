@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+    #quote {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    #new-quote {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+    }
+    #new-quote:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="quote">Click the button for a random quote!</div>
+  <button id="new-quote">New Quote</button>
+
+  <script>
+    // Array containing a list of quotes
+    const quotes = [
+      "The only limit to our realization of tomorrow is our doubts of today. – Franklin D. Roosevelt",
+      "The purpose of our lives is to be happy. – Dalai Lama",
+      "Life is what happens when you're busy making other plans. – John Lennon",
+      "Get busy living or get busy dying. – Stephen King",
+      "You have within you right now, everything you need to deal with whatever the world can throw at you. – Brian Tracy",
+      "Success is not final, failure is not fatal: it is the courage to continue that counts. – Winston Churchill"
+    ];
+
+    // Function to select a random quote from the array
+    function getRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      return quotes[randomIndex];
+    }
+
+    // Function to display the random quote in the HTML element
+    function displayRandomQuote() {
+      const quoteElement = document.getElementById("quote");
+      quoteElement.textContent = getRandomQuote();
+    }
+
+    // Add event listener to update quote on button click
+    document.getElementById("new-quote").addEventListener("click", displayRandomQuote);
+
+    // Display a random quote on initial page load
+    displayRandomQuote();
+  </script>
+</body>
+</html>
