@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorting Algorithm Visualizer</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    #array-container {
+      display: flex;
+      align-items: flex-end;
+      width: 80%;
+      height: 400px;
+      border: 1px solid #ddd;
+      margin: 20px 0;
+      background: #fff;
+    }
+    .bar {
+      margin: 0 2px;
+      background: #007BFF;
+      width: 20px;
+    }
+    .bar.active {
+      background: #FF4136;
+    }
+    #controls {
+      margin: 10px;
+    }
+    #start-sort {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #start-sort:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sorting Algorithm Visualizer</h1>
+  <div id="array-container"></div>
+  <div id="controls">
+    <button id="start-sort">Start Bubble Sort</button>
+  </div>
+
+  <script>
+    const container = document.getElementById("array-container");
+    const startButton = document.getElementById("start-sort");
+
+    // Generate an array of random values
+    const arraySize = 30;
+    let array = [];
+    for (let i = 0; i < arraySize; i++) {
+      array.push(Math.floor(Math.random() * 300) + 20);
+    }
+
+    // Render the array as bars in the container
+    function renderArray() {
+      container.innerHTML = "";
+      array.forEach((value, index) => {
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        bar.style.height = value + "px";
+        bar.setAttribute("data-index", index);
+        container.appendChild(bar);
+      });
+    }
+
+    // Delay function to create visual pauses
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Bubble Sort algorithm with visual updates
+    async function bubbleSort() {
+      const bars = document.getElementsByClassName("bar");
+      let n = array.length;
+      for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+          // Highlight the bars being compared
+          bars[j].classList.add("active");
+          bars[j + 1].classList.add("active");
+          await sleep(100);
+
+          if (array[j] > array[j + 1]) {
+            // Swap values in the array
+            let temp = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = temp;
+            // Update the heights of the bars
+            bars[j].style.height = array[j] + "px";
+            bars[j + 1].style.height = array[j + 1] + "px";
+          }
+          // Remove the highlight after comparison
+          bars[j].classList.remove("active");
+          bars[j + 1].classList.remove("active");
+        }
+      }
+    }
+
+    // Initial rendering of the unsorted array
+    renderArray();
+
+    // Add event listener to the button to start sorting
+    startButton.addEventListener("click", async () => {
+      startButton.disabled = true; // Disable the button during sorting
+      await bubbleSort();
+      startButton.disabled = false;
+    });
+  </script>
+</body>
+</html>
