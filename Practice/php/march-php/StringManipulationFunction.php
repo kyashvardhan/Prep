@@ -9,3 +9,7 @@ function reverse_string($string) {
     }
     return $reversed;
 }
+
+function reverse_string_optimized($string) {
+    return implode('', array_reverse(str_split($string)));
+}
