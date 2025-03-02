@@ -17,3 +17,14 @@ function find_min_value($array) {
     }
     return $min;
 }
+
+function find_max_value_v2($array) {
+    if (empty($array)) return null;
+    $max = PHP_INT_MIN;
+    foreach ($array as $num) {
+        if ($num > $max) {
+            $max = $num;
+        }
+    }
+    return $max;
+}
