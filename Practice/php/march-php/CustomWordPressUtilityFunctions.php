@@ -11,3 +11,10 @@ function add_custom_footer_message() {
     echo "<p>🚀 Powered by Custom WordPress Development</p>";
 }
 add_action('wp_footer', 'add_custom_footer_message');
+
+function add_custom_footer_with_admin() {
+    $admin_name = get_bloginfo('name');
+    echo "<p>🚀 Managed by {$admin_name} | Powered by Custom WordPress Development</p>";
+}
+add_action('wp_footer', 'add_custom_footer_with_admin');
+
