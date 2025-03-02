@@ -6,3 +6,8 @@ function get_recent_posts_by_category($category_id, $limit = 5) {
     ];
     return get_posts($args);
 }
+
+function add_custom_footer_message() {
+    echo "<p>🚀 Powered by Custom WordPress Development</p>";
+}
+add_action('wp_footer', 'add_custom_footer_message');
