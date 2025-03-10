@@ -3,7 +3,7 @@
  * Plugin Name: Books CPT and Meta Boxes
  * Description: Registers a custom post type "Books" with meta boxes for price and a custom taxonomy for genres.
  * Version: 1.0
- * Author: Your Name
+ * Author: yash
  */
 
 // Register Custom Post Type "Books"
