@@ -1,0 +1,42 @@
+.wp-tavern-slideshow {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  .slide {
+    display: none;
+    position: relative;
+    transition: opacity 0.3s ease;
+
+    &.active {
+      display: block;
+      animation: fade 0.5s;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        max-height: 40vh;
+      }
+    }
+  }
+
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
