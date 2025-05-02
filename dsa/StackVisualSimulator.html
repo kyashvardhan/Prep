@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stack Visual Simulator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    .stack-container {
+      display: flex;
+      flex-direction: column-reverse;
+      border: 2px solid #333;
+      width: 120px;
+      height: 300px;
+      justify-content: flex-start;
+      background: white;
+      margin-bottom: 20px;
+    }
+    .stack-item {
+      border-top: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+      background-color: #61dafb;
+    }
+    .controls input {
+      padding: 5px;
+      margin: 5px;
+    }
+    .controls button {
+      padding: 6px 12px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .log {
+      margin-top: 10px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Stack Visual Simulator</h2>
+  <div class="stack-container" id="stack"></div>
+
+  <div class="controls">
+    <input type="number" id="value" placeholder="Enter number">
+    <button onclick="push()">Push</button>
+    <button onclick="pop()">Pop</button>
+    <button onclick="peek()">Peek</button>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <script>
+    const stack = [];
+    const maxSize = 8;
+
+    function renderStack() {
+      const container = document.getElementById("stack");
+      container.innerHTML = "";
+      for (let i = 0; i < stack.length; i++) {
+        const div = document.createElement("div");
+        div.className = "stack-item";
+        div.innerText = stack[i];
+        container.appendChild(div);
+      }
+    }
+
+    function push() {
+      const val = document.getElementById("value").value;
+      if (val === "") return log("Enter a number to push");
+      if (stack.length >= maxSize) return log("Stack Overflow!");
+      stack.push(val);
+      log(`Pushed ${val}`);
+      renderStack();
+    }
+
+    function pop() {
+      if (stack.length === 0) return log("Stack Underflow!");
+      const val = stack.pop();
+      log(`Popped ${val}`);
+      renderStack();
+    }
+
+    function peek() {
+      if (stack.length === 0) return log("Stack is empty!");
+      log(`Top = ${stack[stack.length - 1]}`);
+    }
+
+    function log(message) {
+      document.getElementById("log").innerText = message;
+    }
+
+    renderStack();
+  </script>
+</body>
+</html>
